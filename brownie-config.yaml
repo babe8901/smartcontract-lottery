@@ -1,0 +1,52 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+
+compiler:
+  solc:
+    remappings:
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
+
+dotenv: .env
+
+networks:
+  default: development
+  development:
+    keyhash: '0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc'
+    fee: 250000000000000000
+  rinkeby:
+    vrf_coordinator: '0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B'
+    eth_usd_price_feed: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+    link_token: "0x01BE23585060835E02B77ef475b0Cc51aA1e0709"
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
+    fee: 100000000000000000
+    verify: True
+  mainnet-fork:
+    eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+  kovan:
+    vrf_coordinator: "0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9"
+    eth_usd_price_feed: "0x9326BFA02ADD2366b30bacB125260Af641031331"
+    link_token: "0xa36085F69e2889c224210F603D836748e7dC0088"
+    keyhash: "0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4"
+    fee: 100000000000000000
+    verify: True
+  polygon-test:
+    vrf_coordinator: "0x8C7382F9D8f56b33781fE506E897a4F1e2d17255"
+    # matic/usd price feed
+    eth_usd_price_feed: "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0"
+    link_token: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
+    keyhash: "0x6e75b569a01ef56d18cab6a8e71e6600d6ce853834d4a5748b720d06f878b3a4"
+    fee: 100000000000000
+    verify: True
+  bsc-test:
+    vrf_coordinator: "0xa555fC018435bef5A13C6c6870a9d4C11DEC329C"
+    # bnb/usd price feed
+    eth_usd_price_feed: "0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526" 
+    link_token: "0x84b9B910527Ad5C03A9Ca831909E21e236EA7b06"
+    keyhash: "0xcaf3c3727e033261d383b315559476f48034c13b18f8cafed4d871abe5049186"
+    fee: 100000000000000000
+    verify: True
+
+wallets:
+  from_key: ${PRIVATE_KEY}
