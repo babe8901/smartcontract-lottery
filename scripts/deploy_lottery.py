@@ -71,7 +71,7 @@ def check_winner(lottery, recent_winner):
 
 
 def main():
-    # deploy_lottery()
+    deploy_lottery()
     start_lottery()
     enter_lottery()
     end_lottery()
